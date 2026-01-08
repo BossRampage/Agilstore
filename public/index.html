@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>AgilStore - Controle de Inventário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>AgilStore</h1>
+  <p>Gestão de Inventário de Eletrônicos</p>
+</header>
+
+<main class="container">
+
+  <!-- Cadastro / Edição de Produtos -->
+  <section class="card">
+    <h2>Cadastrar Produto</h2>
+
+    <form class="form" id="formProduto">
+      <!-- usado pelo JS para edição -->
+      <input type="hidden" id="produtoId">
+
+      <div class="form-group">
+        <label>Nome do Produto</label>
+        <input type="text" id="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label>Categoria</label>
+        <select id="categoria">
+          <option>Smartphones</option>
+          <option>Laptops</option>
+          <option>Acessórios</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Quantidade em Estoque</label>
+        <input type="number" id="quantidade" required>
+      </div>
+
+      <div class="form-group">
+        <label>Preço (R$)</label>
+        <input type="number" step="0.01" id="preco" required>
+      </div>
+
+      <button type="submit" id="btnSalvar">Adicionar Produto</button>
+    </form>
+  </section>
+
+  <!-- Lista de Produtos -->
+  <section class="card">
+    <h2>Produtos em Estoque</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Qtd.</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody id="listaProdutos">
+        <!-- Exemplo de linha (JS vai gerar) -->
+        <!--
+        <tr>
+          <td>Mouse</td>
+          <td>Acessórios</td>
+          <td>10</td>
+          <td>R$ 59,90</td>
+          <td>
+            <button class="btn-edit">Editar</button>
+            <button class="btn-delete">Remover</button>
+          </td>
+        </tr>
+        -->
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<script src="cadastrar.js"></script>
+</body>
+</html>
